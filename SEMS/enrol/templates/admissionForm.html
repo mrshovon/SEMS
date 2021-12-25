@@ -1,0 +1,103 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Admission Form</title>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            
+            <a class="btn btn-outline-secondary my-2 my-sm-0" href="{% url 'loginPage' %}" role="button">Back</a>
+          </form>
+        </div>
+      </nav>
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col">
+                <table class="table" >
+                    {% for message in messages %}
+					    <p id="messages">{{ message }}</p>
+				    {% endfor %}
+                    <div class="form-group">
+                        <tr>
+                            <th><label for="applicantName">Applicant Name:</label></th>
+                            <th><input type="text" id="applicantName" class="form-control" placeholder="Applicant Name:" name="applicantName"></th>
+                        </tr>
+                        <tr>
+                            <th><label for="dateOfBirth">Date Of Birth :</label></th>
+                            <th><input type="date" id="dateOfBirth" class="form-control" placeholder="Date Of Birth" name="dateOfBirth"></th>
+                        </tr>
+                        <tr>
+                            <th><label for="fathersName">Father's Name:</label></th>
+                            <th><input type="text" id="fathersName" class="form-control" placeholder="Father's Name:" name="fathersName"></th>
+                        </tr>
+                        <tr>
+                            <th><label for="mothersName">Mother's Name:</label></th>
+                            <th><input type="text" id="fathersName" class="form-control" placeholder="Mother's Name:" name="fathersName"></th>
+                        </tr>
+                        <tr>
+                            <th><label for="address">Address</label></th>
+                            <th><input type="text" id="address" class="form-control" placeholder="Address" name="address"></th>
+                        </tr>
+                        <tr>
+                            <th><label for="school">School:</label></th>
+                            <th><input type="text" id="school" class="form-control" placeholder="School" name="school"></th>
+                        </tr>
+                        <tr>
+                            <th><label for="SSCResult">SSC Result : </label></th>
+                            <th><input type="text" id="SSCResult" class="form-control" placeholder="SSC Result" name="SSCResult"></th>
+                        </tr>
+                        <tr>
+                            <th><label for="collage">Collage:</label></th>
+                            <th><input type="text" id="collage" class="form-control" placeholder="Collage" name="collage"></th>
+                        </tr>
+                        <tr>
+                            <th><label for="HSCResult">HSC Result : </label></th>
+                            <th><input type="text" id="HSCResult" class="form-control" placeholder="HSC Result" name="HSCResult"></th>
+                        </tr>
+                        <tr>
+                            <th><label for="department">Expected Department : </label></th>
+                            <th><input type="text" id="department" class="form-control" placeholder="Expected Department : " name="department"></th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div class="d-flex justify-content-center mt-3 login_container">
+                                    <input class="btn login_btn" type="submit" value="Login">
+                                </div>
+                            </th>
+                        </tr>
+
+                        
+                    </div>
+                </table>
+              </div>
+              
+            
+          </form>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
